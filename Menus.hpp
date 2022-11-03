@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 #include <iostream>
 #include <windows.h>
@@ -34,7 +35,7 @@ namespace MH
         {
             char c = char(_key);
             std::string f = std::string(1, c);
-            std::string tmp = f + " - " + _desc;
+            std::string tmp = f + ") " + _desc;
             return tmp;
         }
         ~Fnc();
@@ -49,7 +50,7 @@ namespace MH
         std::vector<std::string> _info;
         std::vector<Fnc *> _listFnc;
         // is need to add funcion to set potition text <-
-        const int _info_x = 10, _info_y = 5;
+        const int _info_x = 2, _info_y = 2;
         void showInfo(int x, int y)
         {
             for (int i = 0; i < _info.size(); i++)
@@ -58,7 +59,6 @@ namespace MH
                 Console->log(_info[i]);
             }
         }
-
         void showOpKey(int x, int y)
         {
             for (int i = 0; i < _listFnc.size(); i++)
@@ -68,12 +68,10 @@ namespace MH
                 Console->log(fn->getInfo());
             }
         }
-
         // clear
         int _areaClear_x = 25;
-        int _areaKey = 20;
+        int _areaKey = 17;
         std::string _ch_clear = "  ";
-
     public:
         Menus(){};
         void addOp(char key, void (*fc)(), std::string desc)
@@ -99,7 +97,7 @@ namespace MH
             if (kbhit())
             {
                 int key = getch();
-                Console->gotoxy(20, 20);
+                Console->gotoxy(25, 25);
                 Console->setColor(6);
                 std::cout << "key: " << key;
                 for (int i = 0; i < _listFnc.size(); i++)
@@ -137,7 +135,7 @@ namespace MH
                 clear();
                 Console->setTitle(_title);
                 showInfo(_info_x, _info_y);
-                showOpKey(2, _areaKey);
+                showOpKey(3, _areaKey);
                 HandlerKey();
                 Sleep(_sleep);
             }

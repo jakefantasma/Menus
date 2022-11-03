@@ -7,6 +7,6 @@ main.o : main.cpp
 clean: 
 	cd  $(BUILD) && rm -f *.o *.exe
 all: main.o
-	$(CC) -g "$(BUILD)\\*.o" -o "$(BUILD)\\$(BIN)" 
+	$(CC) -g $(BUILD)\\*.o -o "$(BUILD)\\$(BIN)" 
 run:
 	cmd /c start cmd /k .\$(BUILD)\\$(BIN)
