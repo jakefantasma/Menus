@@ -14,7 +14,7 @@ Crea un nuevo objeto Menu al cual podremos modificarle caracteristicas.-
 MH::Menus *MainMenu = new MH::Menus();
 int main()
 {
-
+  MainMenu->setTitle("VENTANA DE MUESTRA");
   MainMenu->addInfo("-informacion para muestra de menu");
   MainMenu->addOp(
           97, []()
