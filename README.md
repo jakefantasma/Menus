@@ -1,5 +1,5 @@
 # Menus
-permite gestionar un menu de opciones persistentes, con un pequeno panel de informacion, opciones y seleccion, por el momento permite desplegar informacion.
+permite gestionar un menu de opciones persistentes, con un pequeno panel de informacion, opciones y seleccion, por el momento permite desplegar.
 
 - cambiar titulo
 - agregar informacion
@@ -15,7 +15,7 @@ MH::Menus *MainMenu = new MH::Menus();
 int main()
 {
   MainMenu->setTitle("VENTANA DE MUESTRA");
-  MainMenu->addInfo("-informacion para muestra de menu");
+  MainMenu->addInfo("-informacion para muestra de menu"); 
   MainMenu->addOp(
           97, []()
           { 
